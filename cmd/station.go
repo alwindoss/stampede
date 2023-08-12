@@ -55,6 +55,8 @@ to quickly create a Cobra application.`,
 	},
 }
 
+var addr string
+
 func init() {
 	runCmd.AddCommand(stationCmd)
 
@@ -67,4 +69,5 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// stationCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	stationCmd.Flags().StringVar(&addr, "addr", "localhost:8080", "server address the station to point to")
 }
